@@ -1,6 +1,5 @@
 angular-args
 =========
-
 sample
 ```js
 var app=angular.module('app',['args']);
