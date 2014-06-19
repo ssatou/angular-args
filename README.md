@@ -16,7 +16,7 @@ app.factory('sampleService',app.args({
         }
     };
 }));
-app.controller('testService',app.args({
+app.controller('sampleCtrl',app.args({
     sample : 'sampleService',
     $scope : '$scope'
 },function(args){
@@ -26,8 +26,6 @@ app.controller('testService',app.args({
 });
 ```
 
-
 License
 ----
-
 MIT
