@@ -3,24 +3,24 @@ angular-args
 sample
 ```js
 var app=angular.module('app',['args']);
-app.factory('teteService',app.args({
+app.factory('sampleService',app.args({
     $q : '$q'
 },function(args){
     return {
         getData : function(){
             var defer=args.$q.defer();
             defer.resolve({
-                tete : 'tete'
+                val : 'val1'
             });
             return defer.promise;
         }
     };
 }));
-app.controller('teteCtrl',app.args({
-    tete : 'teteService',
+app.controller('testService',app.args({
+    sample : 'sampleService',
     $scope : '$scope'
 },function(args){
-    args.getData().then(function(data){
+    args.sample.getData().then(function(data){
         args.$scope.data=data;
     });
 });
