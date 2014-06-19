@@ -9,14 +9,14 @@
 				var names, reqs;
 				if(angular.isFunction(a)){
 					imp={};
-					fn=angular.isFunction(a) ? a:angular.noop;
+					fn=a;
 				}else if (arguments.length === 1) {
 					a || (a = {});
-					imp = angular.isObject(a.imp) ? a.imp : {};
-					fn = angular.isFunction(a.fn) ? a.fn : angular.noop;
+					imp = a.imp;
+					fn = a.fn;
 				} else if (arguments.length === 2) {
-					imp = angular.isObject(a) ? a : {};
-					fn = angular.isFunction(b) ? b : angular.noop;
+					imp = a;
+					fn = b;
 				}
 				angular.isObject(imp)||(imp={});
 				angular.isFunction(fn)||(fn=angular.noop);
