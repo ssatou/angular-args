@@ -30,6 +30,7 @@
 					angular.forEach(arguments || [], function (di, i) {
 						args[names[i]] = di;
 					});
+					names=null;
 					return (function (fn,args) {
 						return fn(args);
 					}.call(this,fn,args));
