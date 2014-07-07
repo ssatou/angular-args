@@ -1,8 +1,12 @@
-(function () {
+(function (angular) {
+	if(!angular){
+		return;
+	}
 	var angularModule = angular.module;
 	angular.module('args', []);
 	angular.module = function (name, requires, configFn) {
 		var module = angularModule(name, requires, configFn);
+		requires||(requires=[]);
 		if (requires.indexOf('args') > -1) {
 			module.args = function (a, b) {
 				var imp, fn;
@@ -40,4 +44,4 @@
 		}
 		return module;
 	};
-}());
+}(window.angular||false));
